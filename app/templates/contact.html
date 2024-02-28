@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<style>
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+</style>
+{% endblock %}
+
+{% block main %}
+<h1>Contact</h1>
+
+<form method="POST" action="{{ url_for('contact') }}">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}
+        <p class="input-description">Please enter your full name</p>
+        {{ form.name }}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}
+        <p class="input-description">Please enter your email address</p>
+        {{ form.email }}
+    </div>
+
+    <div class="form-group">
+        {{ form.subject.label }}
+        <p class="input-description">Please enter a subject</p>
+        {{ form.subject }}
+    </div>
+
+    <div class="form-group">
+        {{ form.message.label }}
+        <p class="input-description">Please enter a message</p>
+        {{ form.message }}
+    </div>
+
+    {{ form.csrf_token }}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

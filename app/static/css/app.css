@@ -1,3 +1,22 @@
 body {
     padding-top: 5rem;
 }
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style individual flash messages */
+  .flashes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style success flash messages */
+  .flashes .success {
+    background-color: #a5ecb6;
+    color: #000000;
+  }
+  
